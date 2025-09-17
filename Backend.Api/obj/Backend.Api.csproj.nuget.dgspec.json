@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/saied/code/vibra/Backend.Api/Backend.Api.csproj": {}
+    "/home/saied/code/Vibra/Backend.Api/Backend.Api.csproj": {}
   },
   "projects": {
-    "/home/saied/code/vibra/Backend.Api/Backend.Api.csproj": {
+    "/home/saied/code/Vibra/Backend.Api/Backend.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/saied/code/vibra/Backend.Api/Backend.Api.csproj",
+        "projectUniqueName": "/home/saied/code/Vibra/Backend.Api/Backend.Api.csproj",
         "projectName": "Backend.Api",
-        "projectPath": "/home/saied/code/vibra/Backend.Api/Backend.Api.csproj",
+        "projectPath": "/home/saied/code/Vibra/Backend.Api/Backend.Api.csproj",
         "packagesPath": "/home/saied/.nuget/packages/",
-        "outputPath": "/home/saied/code/vibra/Backend.Api/obj/",
+        "outputPath": "/home/saied/code/Vibra/Backend.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/saied/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -37,11 +37,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "imports": [
             "net461",
             "net462",
@@ -53,6 +54,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.8, 9.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -61,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

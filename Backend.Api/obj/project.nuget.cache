@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qi7HtT/mNHw=",
+  "dgSpecHash": "AXpFJCxccAI=",
   "success": true,
-  "projectFilePath": "/home/saied/code/vibra/Backend.Api/Backend.Api.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/saied/code/Vibra/Backend.Api/Backend.Api.csproj",
+  "expectedPackageFiles": [
+    "/home/saied/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+  ],
   "logs": []
 }

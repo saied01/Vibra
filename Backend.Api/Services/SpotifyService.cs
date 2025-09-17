@@ -9,8 +9,8 @@ namespace Backend.Services
     public class SpotifyService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _clientId = "TU_CLIENT_ID";      // TODO: poné acá tu Client ID
-        private readonly string _clientSecret = "TU_CLIENT_SECRET";  // TODO: poné acá tu Client Secret
+        private readonly string _clientId = "9b6d90e3ce66472e9b0f350190bdbbe2";
+        private readonly string _clientSecret = "d269bc221c4f4d2cb5ec6047f0d81fe5";
 
         public SpotifyService(HttpClient httpClient)
         {
@@ -47,6 +47,19 @@ namespace Backend.Services
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<string> SearchArtistAsync(string name, string accessToken)
+        {
+          _httpClient.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", accessToken);
+
+          var request = $"https://api.spotify.com/v1/search?q={Uri.EscapeDataString(name)}&type=artist&limit=5";
+
+          var response = await _httpClient.GetAsync(request);
+          response.EnsureSuccessStatusCode();
+
+          return await response.Content.ReadAsStringAsync();
         }
     }
 }

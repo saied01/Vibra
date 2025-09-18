@@ -51,12 +51,14 @@ namespace Backend.Services
 
         public async Task<string> SearchArtistAsync(string name, string accessToken)
         {
-          _httpClient.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer", accessToken);
 
-          var request = $"https://api.spotify.com/v1/search?q={Uri.EscapeDataString(name)}&type=artist&limit=5";
+          var url = $"https://api.spotify.com/v1/search?q={Uri.EscapeDataString(name)}&type=artist&limit=5";
+          
+          var request = new HttpRequestMessage(HttpMethod.Get, url);
+        
+          request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-          var response = await _httpClient.GetAsync(request);
+          var response = await _httpClient.SendAsync(request);
           response.EnsureSuccessStatusCode();
 
           return await response.Content.ReadAsStringAsync();

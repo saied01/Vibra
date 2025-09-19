@@ -52,16 +52,29 @@ namespace Backend.Services
         public async Task<string> SearchArtistAsync(string name, string accessToken)
         {
 
-          var url = $"https://api.spotify.com/v1/search?q={Uri.EscapeDataString(name)}&type=artist&limit=5";
-          
-          var request = new HttpRequestMessage(HttpMethod.Get, url);
-        
-          request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var url = $"https://api.spotify.com/v1/search?q={Uri.EscapeDataString(name)}&type=artist&limit=5";
 
-          var response = await _httpClient.SendAsync(request);
-          response.EnsureSuccessStatusCode();
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-          return await response.Content.ReadAsStringAsync();
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+            var response = await _httpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<string> GetRelatedArtistsAsync(string name, string accessToken)
+        {
+            var url = $"https://api.spotify.com/v1/artists/{name}/related-artists";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+            var response = await _httpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsStringAsync();
         }
     }
 }
